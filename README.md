@@ -13,20 +13,21 @@ A RESTful API that fetches country data from an external API, stores it in a dat
 
 ## Technologies Used
 
-- **Node.js**
-- **Express**
-- **TypeScript**
-- **MySQL**
-- **Axios**
-- **Sharp**
-- **Dotenv**
+- **Node.js** for server-side JavaScript runtime
+- **Express** for routing and middleware
+- **TypeScript** for type safety
+- **MySQL** for persistence
+- **Axios** for API calls
+- **Sharp** for Image generation
+- **Dotenv** for environment variables
+
 
 ## Setup Instructions
 
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/country-exchange-rate.git
+    git clone https://github.com/abijay440/country-exchange-rate.git
     cd country-exchange-rate
     ```
 
@@ -55,14 +56,28 @@ A RESTful API that fetches country data from an external API, stores it in a dat
       ```
       DB_HOST=your-database-host
       DB_PORT=your-database-port
-      DB_USER=your-database-user
+      DB_USER=your-database-username
       DB_PASSWORD=your-database-password
       DB_NAME=your-database-name
-      DB_SSL_CA=ca.pem
+      DB_SSL_CA=ca.pem 
       PORT=3000
       ```
 
-    - Save the CA certificate provided by your database provider into a file named `ca.pem` in the root of the project.
+    - Save the CA certificate provided by your database provider into a file named `ca.pem` in the root of the project. For deployment purposes, you should enter all these in the secrets.
+
+5. **Setup the database tables with the schema data:**
+
+    - Make sure mysql is installed.
+    - Run the following command to create the necessary tables:
+
+    ```bash
+    mysql --host=your-database-host --port=your-database-port --user=your-username -password=your-password --database=your-database-name < database.sql
+    ```
+
+  6. **Run test to confirm all is properly set**
+     ```bash
+    npm test
+    ```
 
 
 ## API Usage
@@ -120,5 +135,15 @@ A RESTful API that fetches country data from an external API, stores it in a dat
     - **Get Summary Image:**
 
       ```bash
-      curl http://localhost:3000/countries/image -o summary.png
+    
       ```
+
+---
+
+## 🧑‍💻 Author
+Abiodun Jegede  
+Full-Stack Developer @ Abisofts Inc
+Email: abijay440@gmail.com  
+profile: https://abijay440.github.io/cv/
+
+---

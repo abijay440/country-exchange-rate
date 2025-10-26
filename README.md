@@ -135,7 +135,7 @@ A RESTful API that fetches country data from an external API, stores it in a dat
     - **Get Summary Image:**
 
       ```bash
-    
+      curl http://localhost:3000/countries/image
       ```
 
 ---

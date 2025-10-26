@@ -35,6 +35,10 @@ export const getCountryByName = async (req: Request, res: Response) => {
 
 export const deleteCountryByName = async (req: Request, res: Response) => {
   try {
+    const country = await countryService.getCountryByName(req.params.name);
+    if (!country) {
+      return res.status(404).json({ error: 'Country not found' });
+    }
     await countryService.deleteCountryByName(req.params.name);
     res.status(204).send();
   } catch (error: any) {
